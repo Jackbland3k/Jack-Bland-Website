@@ -3,18 +3,17 @@
 .pdf-container iframe{width:100%;height:100%;border:0;border-radius:8px;display:block;}
 .pdf-wrap{height:calc(100vh - 120px);max-width:1100px;margin:0 auto;}
 
-/* Ensure the PDF can’t force sideways scrolling */
-.pdf-container { overflow: hidden; }
+/* Two views: PDF embed (default desktop) and text resume (default hidden) */
+.cv-embed { display: block; }
+.cv-text  { display: none; max-width: 1100px; margin: 0 auto; }
 
-/* iOS + some mobile viewers still render a bit too wide; hard downscale on very small screens */
-@media (max-width: 480px){
-  .pdf-container iframe{
-    --pdf-scale: 0.92;                      /* adjust 0.90–0.95 if needed */
-    width: calc(100% / var(--pdf-scale));   /* expand box by inverse of scale */
-    transform: scale(var(--pdf-scale));
-    transform-origin: top left;
-  }
+/* On phones: show text, hide PDF */
+@media (max-width: 575.98px){
+  .cv-embed { display: none; }
+  .cv-text  { display: block; }
 }
 
-/* Optional: belt-and-suspenders sitewide */
-html, body { overflow-x: hidden; }
+/* Optional: nicer spacing & readability for the text version */
+.cv-text h2, .cv-text h3 { color: #111; }
+.cv-text p, .cv-text li  { color: #222; line-height: 1.6; }
+.cv-text ul { padding-left: 1.25rem; }
