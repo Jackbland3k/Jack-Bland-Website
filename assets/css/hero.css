@@ -28,7 +28,7 @@
 
 .hero__text {
   flex: 1 1 0;
-  text-align: center;
+  text-align: left;
 }
 
 .hero__text h1 {
@@ -68,6 +68,6 @@
   .hero__text {
     width: 100%;
     padding: 0 12px;
-    text-align: center;             /* optional: centers text on mobile */
+    text-align: left;             /* optional: centers text on mobile */
   }
 }
