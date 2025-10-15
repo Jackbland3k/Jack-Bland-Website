@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ page.title | default: "Jack Bland" }}</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/base.css'      | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/layout.css'    | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/navbar.css'    | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/offcanvas.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/hero.css'      | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/icons.css'     | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/utilities.css' | relative_url }}">
+</head>
+<body>
+  {% include navbar.html %}
+
+  <main class="container mt-5 pt-5">
+    {{ content }}
+  </main>
+
+  <footer class="text-center">
+    <p>&copy; 2025 Jack Bland. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>
