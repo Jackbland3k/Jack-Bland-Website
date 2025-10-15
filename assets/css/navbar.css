@@ -1,11 +1,56 @@
-@media (min-width:992px){
-  .navbar .navbar-nav{gap:2.25rem;}
+/* spacing between nav items on lg+ */
+@media (min-width: 992px){
+  .navbar .navbar-nav { gap: 2.25rem; }
 }
-/* active page bar */
-.navbar .nav-link{position:relative;}
-.navbar .nav-link.is-active::after,
+
+/* text sizing for nav links (exclude icon anchors with .p-0) */
+.navbar .nav-link:not(.p-0){
+  font-size: 1.5rem;
+  font-weight: 800; /* 700–900 are valid; 1000 gets clamped */
+  transition: color .15s ease;
+}
+
+/* dark navbar colors */
+.navbar {
+  background-color: #070d4f;
+}
+.navbar .navbar-brand { color: #fff; }
+.navbar .nav-link { 
+  position: relative; 
+  color: #fff; 
+}
+
+/* underline base (single definition) */
+.navbar .nav-link::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -1px;
+  width: 64px;
+  border-radius: 2px;
+  height: 0;                 /* hidden by default */
+  background: transparent;
+  transition: height .15s ease, background .15s ease;
+}
+
+/* active & hover states (single source of truth) */
+/*.navbar .nav-link.is-active::after{
+  height: 4px;
+  background: #fff;
+}
 .navbar .nav-link:hover::after{
-  content:"";position:absolute;left:50%;transform:translateX(-50%);top:-1px;width:64px;border-radius:2px;
+  height: 3px;
+  background: rgba(255,255,255,.35);
+}*/
+
+
+/* Hover */
+.navbar .nav-link:not(.p-0):hover{
+  color: #78daa0;
 }
-.navbar .nav-link.is-active::after{height:4px;background:#1a1a1a;}
-.navbar .nav-link:hover::after{height:3px;background:rgba(0,0,0,.2);}
+
+/* ACTIVE TAB — change color instead of underline */
+.navbar .nav-link.is-active{
+  color: #78daa0;
+}

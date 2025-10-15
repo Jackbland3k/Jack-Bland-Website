@@ -3,8 +3,8 @@
   align-items: center;              /* was flex-start — now centers vertically */
   gap: 2rem;
   padding: 30px;
-  background: #fff;
-  border-radius: 12px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 36px;
   box-shadow: 0 8px 24px rgba(0,0,0,.08);
   max-width: 1200px;
   margin: 0 auto;
@@ -23,7 +23,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 6px;
+  border-radius: 36px;
 }
 
 .hero__text {
