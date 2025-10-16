@@ -1,10 +1,54 @@
-.offcanvas-body .nav-link{font-size:1.5rem;color:#000;margin-bottom:1rem;text-decoration:none;}
-.offcanvas-body .nav-link:hover{color:#007bff;}
+/* OFF-CANVAS: navy background + white text */
+#mobileMenu{
+  background:#070d4f;          /* navy panel */
+  color:#fff;
+}
 
-#mobileMenu .offcanvas-body{display:flex;align-items:center;justify-content:center;padding:clamp(24px,6vh,48px);}
-.mobile-menu{width:min(520px,86vw);margin:0 auto;}
-.mobile-link{display:block;text-align:center;text-decoration:none;color:#111;font-weight:600;letter-spacing:.12em;
-  font-size:clamp(22px,4.5vw,28px);padding:16px 0;border-top:1px solid rgba(0,0,0,.35);}
-.mobile-link:last-child{border-bottom:1px solid rgba(0,0,0,.35);}
-.mobile-link:is(:hover,:focus){background:rgba(0,0,0,.03);}
-#mobileMenu .btn-close{position:absolute;right:24px;top:20px;}
+/* Center the menu the same way you already do */
+#mobileMenu .offcanvas-body{
+  display:flex;align-items:center;justify-content:center;
+  padding:clamp(24px,6vh,48px);
+}
+
+/* Menu layout */
+.mobile-menu{ width:min(520px,86vw); margin:0 auto; }
+
+/* Links (white by default) */
+.mobile-link{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;                           /* white text */
+  font-weight:800;
+  letter-spacing:.12em;
+  font-size:clamp(22px,4.5vw,28px);
+  padding:16px 0;
+  border-top:1px solid rgba(255,255,255,.25);   /* light white divider */
+}
+.mobile-link:last-child{
+  border-bottom:1px solid rgba(255,255,255,.25);
+}
+
+/* Hover/Focus on dark background */
+.mobile-link:is(:hover,:focus){
+  background:rgba(255,255,255,.08);
+}
+
+/* ACTIVE page (same green as desktop) */
+.mobile-link.is-active,
+.mobile-link[aria-current="page"]{
+  color:#78daa0;
+  border-color:rgba(120,218,160,.5);
+}
+
+/* Make the close (X) icon visible on the dark panel */
+#mobileMenu .btn-close{
+  position:absolute; right:24px; top:20px;
+  filter: invert(1) brightness(200%);   /* turn it white */
+  opacity:.9;
+}
+
+/* If you still have these rules, keep them white too */
+.offcanvas-body .nav-link{ font-size:1.5rem; color:#fff; margin-bottom:1rem; text-decoration:none; }
+.offcanvas-body .nav-link:hover{ color:#78daa0; }
+

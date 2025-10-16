@@ -56,17 +56,21 @@
 
 <!-- Mobile Off-Canvas Menu -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
-  <!-- close button -->
-  <button type="button"
-          class="btn-close position-absolute end-0 me-3 mt-3"
+  <button type="button" class="btn-close position-absolute end-0 me-3 mt-3"
           data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
   <div class="offcanvas-body">
+    {% assign here = page.url | relative_url %}
+    {% assign home_href = '/' | relative_url %}
+    {% assign cv_href = '/cv.html' | relative_url %}
+    {% assign projects_href = '/projects.html' | relative_url %}
+    {% assign contact_href = '/contact.html' | relative_url %}
+
     <nav class="mobile-menu">
-      <a href="index.html"   class="mobile-link">Home</a>
-      <a href="cv.html"      class="mobile-link">CV</a>
-      <a href="projects.html" class="mobile-link">Projects</a>
-      <a href="contact.html"  class="mobile-link">Contact</a>
+      <a href="{{ home_href }}"     class="mobile-link {% if here == home_href %}is-active{% endif %}"     {% if here == home_href %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ cv_href }}"       class="mobile-link {% if here == cv_href %}is-active{% endif %}"       {% if here == cv_href %}aria-current="page"{% endif %}>CV</a>
+      <a href="{{ projects_href }}" class="mobile-link {% if here == projects_href %}is-active{% endif %}" {% if here == projects_href %}aria-current="page"{% endif %}>Projects</a>
+      <a href="{{ contact_href }}"  class="mobile-link {% if here == contact_href %}is-active{% endif %}"  {% if here == contact_href %}aria-current="page"{% endif %}>Contact</a>
     </nav>
   </div>
-</div>
+</div
